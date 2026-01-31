@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background Circle -->
+  <circle cx="16" cy="16" r="16" fill="#0284c7"/>
+
+  <!-- Cross Symbol -->
+  <path d="M16 6v20M6 16h20" stroke="white" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Heart at center -->
+  <path d="M16 13c-1.5-2-4-2-5 0s0 4 5 7c5-3 6-5 5-7s-3.5-2-5 0z" fill="#dc2626"/>
+</svg>

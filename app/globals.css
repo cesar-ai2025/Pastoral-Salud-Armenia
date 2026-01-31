@@ -1,0 +1,360 @@
+/* Google Fonts - must be first */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+@import "tailwindcss";
+
+/**
+ * ============================================================================
+ * PASTORAL DE LA SALUD — DESIGN SYSTEM (Tailwind v4)
+ * ============================================================================
+ * "El amor que sana" — The love that heals
+ */
+
+/* Theme Configuration */
+@theme {
+  /* Font Families */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-accent: 'Caveat', cursive;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* Celestial Blue - Divine presence, trust */
+  --color-celestial-50: #f0f9ff;
+  --color-celestial-100: #e0f2fe;
+  --color-celestial-200: #bae6fd;
+  --color-celestial-300: #7dd3fc;
+  --color-celestial-400: #38bdf8;
+  --color-celestial-500: #0ea5e9;
+  --color-celestial-600: #0284c7;
+  --color-celestial-700: #0369a1;
+  --color-celestial-800: #075985;
+  --color-celestial-900: #0c4a6e;
+  --color-celestial-950: #082f49;
+
+  /* Healing Green - Health, growth, renewal */
+  --color-healing-50: #f0fdf4;
+  --color-healing-100: #dcfce7;
+  --color-healing-200: #bbf7d0;
+  --color-healing-300: #86efac;
+  --color-healing-400: #4ade80;
+  --color-healing-500: #22c55e;
+  --color-healing-600: #16a34a;
+  --color-healing-700: #15803d;
+  --color-healing-800: #166534;
+  --color-healing-900: #14532d;
+  --color-healing-950: #052e16;
+
+  /* Sacred Gold - Divine light, hope, warmth */
+  --color-sacred-50: #fffbeb;
+  --color-sacred-100: #fef3c7;
+  --color-sacred-200: #fde68a;
+  --color-sacred-300: #fcd34d;
+  --color-sacred-400: #fbbf24;
+  --color-sacred-500: #f59e0b;
+  --color-sacred-600: #d97706;
+  --color-sacred-700: #b45309;
+  --color-sacred-800: #92400e;
+  --color-sacred-900: #78350f;
+  --color-sacred-950: #451a03;
+
+  /* Custom Shadows */
+  --shadow-celestial: 0 4px 14px 0 rgba(14, 165, 233, 0.25);
+  --shadow-healing: 0 4px 14px 0 rgba(34, 197, 94, 0.25);
+  --shadow-sacred: 0 4px 14px 0 rgba(245, 158, 11, 0.25);
+
+  /* Animations */
+  --animate-fade-in: fadeIn 250ms ease-out;
+  --animate-slide-up: slideUp 250ms ease-out;
+  --animate-scale-in: scaleIn 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  --animate-spin-slow: spin 1.5s linear infinite;
+  --animate-pulse-gentle: pulseGentle 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseGentle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ============================================================================
+ * DESIGN TOKENS (CSS Custom Properties)
+ * ============================================================================ */
+
+:root {
+  /* Surface Colors */
+  --color-surface-primary: #ffffff;
+  --color-surface-secondary: #f8fafc;
+  --color-surface-tertiary: #f1f5f9;
+  --color-surface-overlay: rgba(15, 23, 42, 0.5);
+
+  /* Text Colors */
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+  --color-text-disabled: #94a3b8;
+  --color-text-inverse: #ffffff;
+  --color-text-link: #0284c7;
+  --color-text-link-hover: #0369a1;
+
+  /* Border Colors */
+  --color-border-default: #e2e8f0;
+  --color-border-subtle: #f1f5f9;
+  --color-border-strong: #cbd5e1;
+  --color-border-focus: #0ea5e9;
+
+  /* Component Tokens */
+  --nav-height: 4rem;
+  --nav-height-mobile: 3.5rem;
+
+  /* Focus Ring */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: #0ea5e9;
+}
+
+/* ============================================================================
+ * BASE STYLES
+ * ============================================================================ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    background-color: var(--color-surface-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Focus visible for accessibility */
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 var(--focus-ring-offset) var(--color-surface-primary),
+                0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--focus-ring-color);
+  }
+
+  /* Improve touch targets on mobile */
+  @media (pointer: coarse) {
+    button,
+    a,
+    input,
+    select,
+    textarea {
+      min-height: 44px;
+    }
+  }
+}
+
+/* ============================================================================
+ * UTILITY CLASSES
+ * ============================================================================ */
+
+@layer utilities {
+  /* Container utility */
+  .container-pastoral {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-pastoral {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-pastoral {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Accent text style (handwritten look) */
+  .font-accent {
+    font-family: var(--font-accent);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Focus ring utility */
+  .focus-ring:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--color-celestial-500);
+  }
+}
+
+/* ============================================================================
+ * COMPONENT STYLES
+ * ============================================================================ */
+
+@layer components {
+  .card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.1), 0 1px 2px -1px rgba(15, 23, 42, 0.1);
+    transition: box-shadow 150ms ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.1);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 2.5rem;
+    padding: 0 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 150ms ease;
+  }
+
+  .btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--color-celestial-500);
+  }
+
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .btn-primary {
+    background-color: var(--color-celestial-600);
+    color: #ffffff;
+    border: none;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--color-celestial-700);
+    box-shadow: var(--shadow-celestial);
+  }
+
+  .btn-primary:active:not(:disabled) {
+    background-color: var(--color-celestial-800);
+    transform: scale(0.98);
+  }
+
+  .btn-secondary {
+    background-color: #ffffff;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+  }
+
+  .btn-ghost {
+    background-color: transparent;
+    color: #475569;
+    border: none;
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    background-color: #f1f5f9;
+    color: #0f172a;
+  }
+
+  .btn-emergency {
+    background-color: #dc2626;
+    color: #ffffff;
+    border: none;
+  }
+
+  .btn-emergency:hover:not(:disabled) {
+    background-color: #b91c1c;
+    box-shadow: 0 4px 14px 0 rgba(220, 38, 38, 0.35);
+  }
+
+  .btn-emergency:active:not(:disabled) {
+    background-color: #991b1b;
+    transform: scale(0.98);
+  }
+}
+
+/* ============================================================================
+ * ACCESSIBILITY: Reduced Motion
+ * ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

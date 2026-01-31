@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
+  <!-- Background -->
+  <rect width="180" height="180" rx="40" fill="#0284c7"/>
+
+  <!-- Cross Symbol -->
+  <path d="M90 40v100M40 90h100" stroke="white" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- Heart at center -->
+  <path d="M90 75c-8-10-20-10-25 0s0 20 25 35c25-15 30-25 25-35s-17-10-25 0z" fill="#dc2626"/>
+</svg>

@@ -1,0 +1,594 @@
+/**
+ * ============================================================================
+ * PASTORAL DE LA SALUD — DESIGN TOKENS
+ * ============================================================================
+ *
+ * "El amor que sana" — The love that heals
+ *
+ * This file contains all design tokens as CSS custom properties.
+ * Import this file at the root of your application.
+ *
+ * @version 1.0.0
+ * @author Diócesis de Armenia
+ * ============================================================================
+ */
+
+:root {
+  /* ==========================================================================
+     COLOR SYSTEM
+     ========================================================================== */
+
+  /* ---------------------------------------------------------------------------
+     Brand Colors — Core identity colors from logo and Quindío heritage
+     --------------------------------------------------------------------------- */
+
+  /* Celestial Blue — Divine presence, trust, the sky in our logo */
+  --color-celestial-50: #f0f9ff;
+  --color-celestial-100: #e0f2fe;
+  --color-celestial-200: #bae6fd;
+  --color-celestial-300: #7dd3fc;
+  --color-celestial-400: #38bdf8;
+  --color-celestial-500: #0ea5e9;
+  --color-celestial-600: #0284c7;
+  --color-celestial-700: #0369a1;
+  --color-celestial-800: #075985;
+  --color-celestial-900: #0c4a6e;
+  --color-celestial-950: #082f49;
+
+  /* Healing Green — Growth, health, Quindío's verdant landscape */
+  --color-healing-50: #f0fdf4;
+  --color-healing-100: #dcfce7;
+  --color-healing-200: #bbf7d0;
+  --color-healing-300: #86efac;
+  --color-healing-400: #4ade80;
+  --color-healing-500: #22c55e;
+  --color-healing-600: #16a34a;
+  --color-healing-700: #15803d;
+  --color-healing-800: #166534;
+  --color-healing-900: #14532d;
+  --color-healing-950: #052e16;
+
+  /* Sacred Gold — Divine light, halos, hope, warmth */
+  --color-sacred-50: #fffbeb;
+  --color-sacred-100: #fef3c7;
+  --color-sacred-200: #fde68a;
+  --color-sacred-300: #fcd34d;
+  --color-sacred-400: #fbbf24;
+  --color-sacred-500: #f59e0b;
+  --color-sacred-600: #d97706;
+  --color-sacred-700: #b45309;
+  --color-sacred-800: #92400e;
+  --color-sacred-900: #78350f;
+  --color-sacred-950: #451a03;
+
+  /* ---------------------------------------------------------------------------
+     Neutral Colors — Grays for text, backgrounds, borders
+     --------------------------------------------------------------------------- */
+
+  /* Slate — Slightly cool gray with subtle blue undertone */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+
+  /* ---------------------------------------------------------------------------
+     Semantic Colors — Functional colors for UI states
+     --------------------------------------------------------------------------- */
+
+  /* Success — Confirmations, completed states */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+
+  /* Warning — Cautions, pending states */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+
+  /* Error — Errors, destructive actions */
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+
+  /* Info — Informational states */
+  --color-info-50: #f0f9ff;
+  --color-info-100: #e0f2fe;
+  --color-info-500: #0ea5e9;
+  --color-info-600: #0284c7;
+  --color-info-700: #0369a1;
+
+  /* ---------------------------------------------------------------------------
+     Surface Colors — Backgrounds and containers
+     --------------------------------------------------------------------------- */
+
+  --color-surface-primary: #ffffff;
+  --color-surface-secondary: var(--color-slate-50);
+  --color-surface-tertiary: var(--color-slate-100);
+  --color-surface-elevated: #ffffff;
+  --color-surface-overlay: rgba(15, 23, 42, 0.5);
+
+  /* ---------------------------------------------------------------------------
+     Text Colors — Content hierarchy
+     --------------------------------------------------------------------------- */
+
+  --color-text-primary: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-600);
+  --color-text-tertiary: var(--color-slate-500);
+  --color-text-disabled: var(--color-slate-400);
+  --color-text-inverse: #ffffff;
+  --color-text-link: var(--color-celestial-600);
+  --color-text-link-hover: var(--color-celestial-700);
+
+  /* ---------------------------------------------------------------------------
+     Border Colors
+     --------------------------------------------------------------------------- */
+
+  --color-border-default: var(--color-slate-200);
+  --color-border-subtle: var(--color-slate-100);
+  --color-border-strong: var(--color-slate-300);
+  --color-border-focus: var(--color-celestial-500);
+
+  /* ==========================================================================
+     TYPOGRAPHY
+     ========================================================================== */
+
+  /* ---------------------------------------------------------------------------
+     Font Families
+     --------------------------------------------------------------------------- */
+
+  /* Display — Fraunces: Soft, humanist serif with warmth */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+
+  /* Sans — DM Sans: Geometric, clean, excellent for UI */
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Accent — Caveat: Handwritten warmth for taglines */
+  --font-accent: 'Caveat', cursive;
+
+  /* Mono — For code and technical content */
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* ---------------------------------------------------------------------------
+     Font Sizes — Major Third scale (1.25 ratio), 16px base
+     --------------------------------------------------------------------------- */
+
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.25rem;      /* 20px */
+  --text-xl: 1.5rem;       /* 24px */
+  --text-2xl: 1.875rem;    /* 30px */
+  --text-3xl: 2.375rem;    /* 38px */
+  --text-4xl: 3rem;        /* 48px */
+  --text-5xl: 3.75rem;     /* 60px */
+  --text-6xl: 4.5rem;      /* 72px */
+
+  /* ---------------------------------------------------------------------------
+     Font Weights
+     --------------------------------------------------------------------------- */
+
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* ---------------------------------------------------------------------------
+     Line Heights
+     --------------------------------------------------------------------------- */
+
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* ---------------------------------------------------------------------------
+     Letter Spacing
+     --------------------------------------------------------------------------- */
+
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ==========================================================================
+     SPACING
+     ========================================================================== */
+
+  /* Base unit: 4px */
+  --space-0: 0;
+  --space-px: 1px;
+  --space-0-5: 0.125rem;   /* 2px */
+  --space-1: 0.25rem;      /* 4px */
+  --space-1-5: 0.375rem;   /* 6px */
+  --space-2: 0.5rem;       /* 8px */
+  --space-2-5: 0.625rem;   /* 10px */
+  --space-3: 0.75rem;      /* 12px */
+  --space-3-5: 0.875rem;   /* 14px */
+  --space-4: 1rem;         /* 16px */
+  --space-5: 1.25rem;      /* 20px */
+  --space-6: 1.5rem;       /* 24px */
+  --space-7: 1.75rem;      /* 28px */
+  --space-8: 2rem;         /* 32px */
+  --space-9: 2.25rem;      /* 36px */
+  --space-10: 2.5rem;      /* 40px */
+  --space-11: 2.75rem;     /* 44px */
+  --space-12: 3rem;        /* 48px */
+  --space-14: 3.5rem;      /* 56px */
+  --space-16: 4rem;        /* 64px */
+  --space-20: 5rem;        /* 80px */
+  --space-24: 6rem;        /* 96px */
+  --space-28: 7rem;        /* 112px */
+  --space-32: 8rem;        /* 128px */
+  --space-36: 9rem;        /* 144px */
+  --space-40: 10rem;       /* 160px */
+  --space-44: 11rem;       /* 176px */
+  --space-48: 12rem;       /* 192px */
+  --space-52: 13rem;       /* 208px */
+  --space-56: 14rem;       /* 224px */
+  --space-60: 15rem;       /* 240px */
+  --space-64: 16rem;       /* 256px */
+  --space-72: 18rem;       /* 288px */
+  --space-80: 20rem;       /* 320px */
+  --space-96: 24rem;       /* 384px */
+
+  /* ==========================================================================
+     SIZING
+     ========================================================================== */
+
+  /* ---------------------------------------------------------------------------
+     Container Widths
+     --------------------------------------------------------------------------- */
+
+  --container-xs: 20rem;    /* 320px */
+  --container-sm: 24rem;    /* 384px */
+  --container-md: 28rem;    /* 448px */
+  --container-lg: 32rem;    /* 512px */
+  --container-xl: 36rem;    /* 576px */
+  --container-2xl: 42rem;   /* 672px */
+  --container-3xl: 48rem;   /* 768px */
+  --container-4xl: 56rem;   /* 896px */
+  --container-5xl: 64rem;   /* 1024px */
+  --container-6xl: 72rem;   /* 1152px */
+  --container-7xl: 80rem;   /* 1280px */
+  --container-full: 100%;
+  --container-prose: 65ch;
+
+  /* ---------------------------------------------------------------------------
+     Max Widths
+     --------------------------------------------------------------------------- */
+
+  --max-w-screen-sm: 640px;
+  --max-w-screen-md: 768px;
+  --max-w-screen-lg: 1024px;
+  --max-w-screen-xl: 1280px;
+  --max-w-screen-2xl: 1536px;
+
+  /* ==========================================================================
+     BORDERS
+     ========================================================================== */
+
+  /* ---------------------------------------------------------------------------
+     Border Widths
+     --------------------------------------------------------------------------- */
+
+  --border-0: 0;
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-4: 4px;
+  --border-8: 8px;
+
+  /* ---------------------------------------------------------------------------
+     Border Radii
+     --------------------------------------------------------------------------- */
+
+  --radius-none: 0;
+  --radius-sm: 0.25rem;    /* 4px */
+  --radius-default: 0.5rem; /* 8px */
+  --radius-md: 0.625rem;   /* 10px */
+  --radius-lg: 0.75rem;    /* 12px */
+  --radius-xl: 1rem;       /* 16px */
+  --radius-2xl: 1.25rem;   /* 20px */
+  --radius-3xl: 1.5rem;    /* 24px */
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     SHADOWS
+     ========================================================================== */
+
+  /* ---------------------------------------------------------------------------
+     Elevation Shadows — Progressive depth system
+     --------------------------------------------------------------------------- */
+
+  --shadow-none: none;
+
+  /* Level 1: Subtle lift, hover states */
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+
+  /* Level 2: Cards, containers */
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.1),
+               0 1px 2px -1px rgba(15, 23, 42, 0.1);
+
+  --shadow-default: 0 4px 6px -1px rgba(15, 23, 42, 0.1),
+                    0 2px 4px -2px rgba(15, 23, 42, 0.1);
+
+  /* Level 3: Dropdowns, popovers */
+  --shadow-md: 0 10px 15px -3px rgba(15, 23, 42, 0.1),
+               0 4px 6px -4px rgba(15, 23, 42, 0.1);
+
+  --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.1),
+               0 8px 10px -6px rgba(15, 23, 42, 0.1);
+
+  /* Level 4: Modals, dialogs */
+  --shadow-xl: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+
+  --shadow-2xl: 0 35px 60px -15px rgba(15, 23, 42, 0.3);
+
+  /* Inner shadow for inset effects */
+  --shadow-inner: inset 0 2px 4px 0 rgba(15, 23, 42, 0.05);
+
+  /* Colored shadows for brand elements */
+  --shadow-celestial: 0 4px 14px 0 rgba(14, 165, 233, 0.25);
+  --shadow-healing: 0 4px 14px 0 rgba(34, 197, 94, 0.25);
+  --shadow-sacred: 0 4px 14px 0 rgba(245, 158, 11, 0.25);
+
+  /* ==========================================================================
+     TRANSITIONS & ANIMATION
+     ========================================================================== */
+
+  /* ---------------------------------------------------------------------------
+     Durations
+     --------------------------------------------------------------------------- */
+
+  --duration-instant: 50ms;
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+  --duration-slowest: 1000ms;
+
+  /* ---------------------------------------------------------------------------
+     Timing Functions (Easing)
+     --------------------------------------------------------------------------- */
+
+  --ease-linear: linear;
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* ---------------------------------------------------------------------------
+     Transition Presets
+     --------------------------------------------------------------------------- */
+
+  --transition-none: none;
+  --transition-all: all var(--duration-normal) var(--ease-default);
+  --transition-colors: color var(--duration-fast) var(--ease-default),
+                       background-color var(--duration-fast) var(--ease-default),
+                       border-color var(--duration-fast) var(--ease-default);
+  --transition-opacity: opacity var(--duration-normal) var(--ease-default);
+  --transition-shadow: box-shadow var(--duration-fast) var(--ease-default);
+  --transition-transform: transform var(--duration-normal) var(--ease-default);
+
+  /* ==========================================================================
+     Z-INDEX
+     ========================================================================== */
+
+  --z-negative: -1;
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  --z-toast: 800;
+  --z-max: 9999;
+
+  /* ==========================================================================
+     BREAKPOINTS (for reference, use in media queries)
+     ========================================================================== */
+
+  /*
+   * sm:   640px   - Large phones, landscape
+   * md:   768px   - Tablets
+   * lg:   1024px  - Small laptops
+   * xl:   1280px  - Desktops
+   * 2xl:  1536px  - Large screens
+   */
+
+  /* ==========================================================================
+     FOCUS RING
+     ========================================================================== */
+
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--color-celestial-500);
+  --focus-ring: 0 0 0 var(--focus-ring-offset) var(--color-surface-primary),
+                0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-width)) var(--focus-ring-color);
+
+  /* ==========================================================================
+     COMPONENT-SPECIFIC TOKENS
+     ========================================================================== */
+
+  /* ---------------------------------------------------------------------------
+     Button Tokens
+     --------------------------------------------------------------------------- */
+
+  --btn-font-weight: var(--font-medium);
+  --btn-border-radius: var(--radius-lg);
+  --btn-transition: var(--transition-colors), var(--transition-shadow), var(--transition-transform);
+
+  /* Button sizes */
+  --btn-height-xs: 1.75rem;   /* 28px */
+  --btn-height-sm: 2rem;      /* 32px */
+  --btn-height-default: 2.5rem; /* 40px */
+  --btn-height-lg: 2.75rem;   /* 44px */
+  --btn-height-xl: 3rem;      /* 48px */
+
+  --btn-padding-x-xs: var(--space-2-5);
+  --btn-padding-x-sm: var(--space-3);
+  --btn-padding-x-default: var(--space-4);
+  --btn-padding-x-lg: var(--space-5);
+  --btn-padding-x-xl: var(--space-6);
+
+  /* ---------------------------------------------------------------------------
+     Input Tokens
+     --------------------------------------------------------------------------- */
+
+  --input-height: 2.5rem;     /* 40px */
+  --input-height-sm: 2rem;    /* 32px */
+  --input-height-lg: 2.75rem; /* 44px */
+  --input-border-radius: var(--radius-lg);
+  --input-border-width: var(--border-1);
+  --input-padding-x: var(--space-3);
+  --input-font-size: var(--text-base);
+  --input-bg: var(--color-surface-primary);
+  --input-border: var(--color-border-default);
+  --input-border-hover: var(--color-border-strong);
+  --input-border-focus: var(--color-border-focus);
+  --input-placeholder: var(--color-text-tertiary);
+
+  /* ---------------------------------------------------------------------------
+     Card Tokens
+     --------------------------------------------------------------------------- */
+
+  --card-bg: var(--color-surface-primary);
+  --card-border-radius: var(--radius-xl);
+  --card-shadow: var(--shadow-sm);
+  --card-shadow-hover: var(--shadow-md);
+  --card-padding: var(--space-6);
+  --card-padding-compact: var(--space-4);
+
+  /* ---------------------------------------------------------------------------
+     Navigation Tokens
+     --------------------------------------------------------------------------- */
+
+  --nav-height: 4rem;         /* 64px */
+  --nav-height-mobile: 3.5rem; /* 56px */
+  --nav-bg: var(--color-surface-primary);
+  --nav-shadow: var(--shadow-sm);
+  --nav-item-padding-x: var(--space-4);
+  --nav-item-padding-y: var(--space-2);
+
+  /* ---------------------------------------------------------------------------
+     Modal Tokens
+     --------------------------------------------------------------------------- */
+
+  --modal-backdrop-bg: var(--color-surface-overlay);
+  --modal-bg: var(--color-surface-primary);
+  --modal-border-radius: var(--radius-2xl);
+  --modal-shadow: var(--shadow-xl);
+  --modal-padding: var(--space-6);
+  --modal-width-sm: var(--container-sm);
+  --modal-width-default: var(--container-lg);
+  --modal-width-lg: var(--container-3xl);
+}
+
+/* ==========================================================================
+   DARK THEME (Optional)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root.auto-theme,
+  :root:not(.light-theme) {
+    /* Surface colors inverted */
+    --color-surface-primary: var(--color-slate-900);
+    --color-surface-secondary: var(--color-slate-800);
+    --color-surface-tertiary: var(--color-slate-700);
+    --color-surface-elevated: var(--color-slate-800);
+    --color-surface-overlay: rgba(0, 0, 0, 0.7);
+
+    /* Text colors inverted */
+    --color-text-primary: var(--color-slate-50);
+    --color-text-secondary: var(--color-slate-300);
+    --color-text-tertiary: var(--color-slate-400);
+    --color-text-disabled: var(--color-slate-500);
+    --color-text-inverse: var(--color-slate-900);
+    --color-text-link: var(--color-celestial-400);
+    --color-text-link-hover: var(--color-celestial-300);
+
+    /* Border colors */
+    --color-border-default: var(--color-slate-700);
+    --color-border-subtle: var(--color-slate-800);
+    --color-border-strong: var(--color-slate-600);
+
+    /* Input adjustments */
+    --input-bg: var(--color-slate-800);
+    --input-border: var(--color-slate-600);
+
+    /* Card adjustments */
+    --card-bg: var(--color-slate-800);
+  }
+}
+
+/* Explicit dark theme class */
+.dark-theme {
+  --color-surface-primary: var(--color-slate-900);
+  --color-surface-secondary: var(--color-slate-800);
+  --color-surface-tertiary: var(--color-slate-700);
+  --color-surface-elevated: var(--color-slate-800);
+  --color-surface-overlay: rgba(0, 0, 0, 0.7);
+
+  --color-text-primary: var(--color-slate-50);
+  --color-text-secondary: var(--color-slate-300);
+  --color-text-tertiary: var(--color-slate-400);
+  --color-text-disabled: var(--color-slate-500);
+  --color-text-inverse: var(--color-slate-900);
+  --color-text-link: var(--color-celestial-400);
+  --color-text-link-hover: var(--color-celestial-300);
+
+  --color-border-default: var(--color-slate-700);
+  --color-border-subtle: var(--color-slate-800);
+  --color-border-strong: var(--color-slate-600);
+
+  --input-bg: var(--color-slate-800);
+  --input-border: var(--color-slate-600);
+  --card-bg: var(--color-slate-800);
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0ms;
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+    --duration-slower: 0ms;
+    --duration-slowest: 0ms;
+
+    --transition-all: none;
+    --transition-colors: none;
+    --transition-opacity: none;
+    --transition-shadow: none;
+    --transition-transform: none;
+  }
+}
