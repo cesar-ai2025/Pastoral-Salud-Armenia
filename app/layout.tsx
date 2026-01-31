@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import { N8nChat } from '@/components/chat/N8nChat'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pastoralsaludarmenia.org'),
@@ -66,6 +67,7 @@ export default function RootLayout({
     <html lang="es">
       <body className="antialiased" suppressHydrationWarning>
         {children}
+        <N8nChat />
       </body>
     </html>
   )
