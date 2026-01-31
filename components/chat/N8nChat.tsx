@@ -511,23 +511,21 @@ export function N8nChat() {
       document.head.appendChild(styleElement)
     }
 
-    // Dynamically import n8n chat to avoid Turbopack proxy issues
-    const initChat = async () => {
-      // Load CSS dynamically
-      const cssLink = document.createElement('link')
-      cssLink.rel = 'stylesheet'
-      cssLink.href = 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css'
-      cssLink.id = 'n8n-chat-base-styles'
-      if (!document.getElementById('n8n-chat-base-styles')) {
-        document.head.appendChild(cssLink)
-      }
+    // Load CSS dynamically
+    const cssLink = document.createElement('link')
+    cssLink.rel = 'stylesheet'
+    cssLink.href = 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css'
+    cssLink.id = 'n8n-chat-base-styles'
+    if (!document.getElementById('n8n-chat-base-styles')) {
+      document.head.appendChild(cssLink)
+    }
 
-      // Load and initialize chat via CDN to avoid bundler issues
-      const { createChat } = await import(
-        /* webpackIgnore: true */
-        'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js'
-      )
-
+    // Load n8n chat script via script tag to avoid TypeScript/bundler issues
+    const script = document.createElement('script')
+    script.type = 'module'
+    script.id = 'n8n-chat-script'
+    script.textContent = `
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
       createChat({
         webhookUrl: 'https://n8n-clean.srv856038.hstgr.cloud/webhook/5f3fdcad-1bd3-4d7e-8695-abc2cf8da62a/chat',
         mode: 'window',
@@ -548,10 +546,12 @@ export function N8nChat() {
             closeButtonTooltip: 'Cerrar',
           },
         },
-      })
-    }
+      });
+    `
 
-    initChat()
+    if (!document.getElementById('n8n-chat-script')) {
+      document.body.appendChild(script)
+    }
 
     // Cleanup on unmount
     return () => {
